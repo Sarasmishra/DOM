@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input id="inp1" type="text" placeholder="enter 1st Number">
+        <input id="inp2" type="text" placeholder="enter 2nd Number">
+        <br>
+        <br>
+        <div >
+            <button onclick="sum()">Add</button>
+            <button onclick="diff()">Subtract</button>
+            <button onclick="multiply()">Multiply</button>
+            <button onclick="divide()">divide</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let first = document.getElementById("inp1")
+    let second =document.getElementById("inp2")
+      function sum(){
+        let sum =Number(first.value)+Number(second.value)
+        alert(sum)
+
+      }
+      function diff(){
+        let difference =Number(first.value)-Number(second.value)
+        alert(difference)
+
+      }
+      function multiply(){
+        let multiply =Number(first.value)*Number(second.value)
+        alert(multiply)
+
+      }
+      function divide(){
+        let divide =Number(first.value)/Number(second.value)
+        alert(divide)
+
+      }
+</script>
