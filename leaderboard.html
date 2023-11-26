@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <style>
+        /* Add your styling here */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .score-box {
+            width: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 10px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="score-box" id="min-box">
+        MIN: <span id="min-score">999</span>
+    </div>
+    <div class="score-box" id="score-box">
+        SCORE: <span id="current-score"></span>
+    </div>
+    <div class="score-box" id="max-box">
+        MAX: <span id="max-score">0</span>
+    </div>
+</div>
+
+<div class="container">
+    <button onclick="addToScore(1)">1</button>
+    <button onclick="addToScore(2)">2</button>
+    <button onclick="addToScore(3)">3</button>
+    <button onclick="addToScore(3)">4</button>
+    <button onclick="addToScore(3)">5</button>
+    <button onclick="addToScore(3)">6</button>
+    <button onclick="addToScore(3)">7</button>
+    <button onclick="addToScore(3)">8</button>
+    <button onclick="addToScore(3)">9</button>
+    <button onclick="addToScore(3)">0</button>
+    <!-- Add more buttons as needed -->
+    <button onclick="enterScore()">ENTER</button>
+</div>
+
+<script>
+    let currentScore = '';
+
+    function addToScore(number) {
+        currentScore += number;
+        document.getElementById('current-score').innerText = currentScore;
+    }
+
+    function enterScore() {
+        const numericScore = parseInt(currentScore);
+        const minScore = parseInt(document.getElementById('min-score').innerText);
+        const maxScore = parseInt(document.getElementById('max-score').innerText);
+
+        if (isNaN(numericScore)) {
+            alert('Invalid score. Please enter a valid number.');
+            return;
+        }
+
+        if (numericScore < minScore) {
+            document.getElementById('min-score').innerText = numericScore;
+        }
+
+        if (numericScore > maxScore) {
+            document.getElementById('max-score').innerText = numericScore;
+        }
+
+        // Reset the current score
+        currentScore = '';
+        document.getElementById('current-score').innerText = '';
+    }
+</script>
+
+</body>
+</html>
