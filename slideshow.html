@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slideshow</title>
+    <style>
+        #slideshow-container {
+            max-width: 600px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+        }
+
+        #startStopBtn, #prevBtn, #nextBtn {
+            font-size: 1em;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        img{
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="slideshow-container">
+        <img class="mySlides" src="https://th.bing.com/th/id/OIP.1YM53mG10H_U25iPjop83QHaEo?w=263&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Slide 1">
+        <img class="mySlides" src="https://th.bing.com/th/id/OIP.rvSWtRd_oPRTwDoTCmkP5gHaE8?w=244&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Slide 2">
+        <img class="mySlides" src="https://th.bing.com/th/id/OIP.wwxK07x0Umfnh0l-nrjxjgHaDg?w=317&h=166&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Slide 3">
+        <img class="mySlides" src="https://th.bing.com/th/id/OIP.bPBCgvp9N0SUbVYJnBg2IQHaEo?w=261&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Slide 4">
+        <img class="mySlides" src="https://th.bing.com/th?id=OIP.wwxK07x0Umfnh0l-nrjxjgHaDg&w=350&h=166&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Slide 5">
+        <img class="mySlides" src="https://th.bing.com/th?id=OIP.wwxK07x0Umfnh0l-nrjxjgHaDg&w=350&h=166&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Slide 6">
+        <img class="mySlides" src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 7">
+        <img class="mySlides" src="https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 8">
+        <img class="mySlides" src="https://th.bing.com/th?id=OIP.wwxK07x0Umfnh0l-nrjxjgHaDg&w=350&h=166&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Slide 9">
+        <img class="mySlides" src="https://th.bing.com/th?id=OIP.wwxK07x0Umfnh0l-nrjxjgHaDg&w=350&h=166&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Slide 10">
+        <img class="mySlides" src="https://th.bing.com/th?id=OIP.wwxK07x0Umfnh0l-nrjxjgHaDg&w=350&h=166&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Slide 11">
+        <img class="mySlides" src="https://images.pexels.com/photos/919278/pexels-photo-919278.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 12">
+        <img class="mySlides" src="https://th.bing.com/th?id=OIP.wwxK07x0Umfnh0l-nrjxjgHaDg&w=350&h=166&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Slide 12">
+        <img class="mySlides" src="https://images.unsplash.com/photo-1695650858277-6d1eb7ce3216?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D" alt="Slide 13">
+
+        <img class="mySlides" src="https://images.pexels.com/photos/757889/pexels-photo-757889.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 14">
+        <img class="mySlides" src="https://images.pexels.com/photos/45853/grey-crowned-crane-bird-crane-animal-45853.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 15">
+        <img class="mySlides" src="https://images.pexels.com/photos/593655/pexels-photo-593655.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 16">
+
+        <img class="mySlides" src="https://images.pexels.com/photos/326212/pexels-photo-326212.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 17">
+        <img class="mySlides" src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 18">
+        <img class="mySlides" src="https://images.pexels.com/photos/326212/pexels-photo-326212.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 19">
+        <img class="mySlides" src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 20">
+         
+    </div>
+
+    <button id="startStopBtn" onclick="startStopSlideshow()">Start Slideshow</button>
+    <button id="prevBtn" onclick="prevSlide()">Previous</button>
+    <button id="nextBtn" onclick="nextSlide()">Next</button>
+
+
+    <script>
+        let slideIndex = 0;
+        let slideshowInterval;
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("mySlides");
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        function startStopSlideshow() {
+            const btn = document.getElementById("startStopBtn");
+
+            if (slideshowInterval) {
+                clearInterval(slideshowInterval);
+                btn.textContent = "Start Slideshow";
+                slideshowInterval = null;
+            } else {
+                slideshowInterval = setInterval(showSlides, 2000); // Change slide every 2 seconds
+                btn.textContent = "Stop Slideshow";
+            }
+        }
+
+        function nextSlide() {
+            clearInterval(slideshowInterval);
+            showSlides();
+        }
+
+        function prevSlide() {
+            clearInterval(slideshowInterval);
+            slideIndex -= 2; // Go back two slides to show the previous one
+            showSlides();
+        }
+
+        // Start the slideshow initially
+        startStopSlideshow();
+    </script>
+        
+    </script>
+</body>
+</html>
