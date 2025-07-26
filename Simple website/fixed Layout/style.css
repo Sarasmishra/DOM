@@ -1,0 +1,46 @@
+/* Apply border-box to everything */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Optional: body styling */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Responsive and neat layout */
+.container {
+  display: flex; /* Arrange boxes in a row */
+  gap: 20px;
+  padding: 10px;
+  flex-wrap: wrap; /* Allows wrap on small screens */
+  justify-content: center;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: lightblue;
+  border: 1px solid black;
+  text-align: center;
+  line-height: 100px;
+  font-weight: bold;
+  /* Remove absolute positioning and negative margins */
+  position: static;
+}
+
+/* Fixed text at the top center */
+.text {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  z-index: 1000;
+}
