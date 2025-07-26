@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>L0 - Mastering CSS Display Properties</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .block-element {
+      display: block;
+      width: 100%;
+      border: 2px solid #3498db;
+      padding: 10px;
+      margin-bottom: 20px;
+      background-color: #eaf2f8;
+    }
+
+    .inline-element {
+      display: inline;
+      background-color: #f9e79f;
+      padding: 5px;
+      border: 1px dashed #f1c40f;
+      margin-right: 10px;
+    }
+
+    .inline-block-element {
+      display: inline-block;
+      width: 150px;
+      height: 50px;
+      background-color: #d5f5e3;
+      border: 2px dotted #27ae60;
+      padding: 5px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .hidden-element {
+      display: none;
+      background-color: #f5b7b1;
+      padding: 10px;
+      border: 2px solid #c0392b;
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Display Property Demonstration</h1>
+
+  <div class="block-element">I am a block-level element. I take up the full width available.</div>
+
+  <span class="inline-element">I am an inline element.</span>
+  <span>Other inline text follows me naturally.</span>
+
+  <div class="inline-block-element">Inline-block box</div>
+  <span>Text beside inline-block.</span>
+
+  <div class="hidden-element" id="hiddenBox">You can toggle my visibility!</div>
+
+  <button onclick="toggleHidden()">Toggle Hidden Element</button>
+
+<script>
+  function toggleHidden() {
+    const box = document.getElementById("hiddenBox");
+    if (box.style.display === "none" || box.style.display === "") {
+      box.style.display = "block";
+    } else {
+      box.style.display = "none";
+    }
+  }
+</script>
